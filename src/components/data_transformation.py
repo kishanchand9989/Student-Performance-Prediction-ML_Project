@@ -16,7 +16,9 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl") 
+    #preprocessor_obj_file_path="artifacts\preprocessor.pkl"
+    
 
 class DataTransformation:
     def __init__(self):
@@ -24,7 +26,7 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         '''
-        This function si responsible for data trnasformation
+        This function is responsible for data trnasformation
         
         '''
         try:
@@ -34,7 +36,7 @@ class DataTransformation:
                 "race_ethnicity",
                 "parental_level_of_education",
                 "lunch",
-                "test_preparation_course",
+                "test_preparation_course"
             ]
 
             num_pipeline= Pipeline(
@@ -111,7 +113,7 @@ class DataTransformation:
             save_object(
 
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
-                obj=preprocessing_obj
+                obj=preprocessing_obj                     
 
             )
 
